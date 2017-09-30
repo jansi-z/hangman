@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Title from './components/Title'
+import Hangman from './hangman/Hangman'
 import Word from './hangman/Word'
 import Guess from './hangman/Guess'
 import './App.css';
@@ -9,6 +10,7 @@ class App extends Component {
     return (
       <div className="App">
         <Title content="HANGMAN" />
+        <Hangman />
         <Word />
         <Guess />
       </div>

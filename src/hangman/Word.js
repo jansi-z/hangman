@@ -1,5 +1,3 @@
-// shows the current word
-
 import React, { PureComponent } from 'react'
 // import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
@@ -22,8 +20,6 @@ export class Word extends PureComponent {
     const currentGuesses = this.props.guesses
     const playerWord = showGuess(currentWord, currentGuesses)
 
-
-    // debugger;
     return(
       <h1>{ playerWord }</h1>
     )

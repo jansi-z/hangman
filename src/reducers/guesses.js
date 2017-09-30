@@ -2,8 +2,10 @@ import { GUESS } from '../actions/guess'
 
 export default (state = [], { type, payload } = {}) => {
   switch (type) {
+
     case GUESS :
-      [...payload].concat(state)
+      return state.concat(payload)
+
     default :
       return state
   }

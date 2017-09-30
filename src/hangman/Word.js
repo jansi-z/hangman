@@ -4,18 +4,31 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 
+function showGuess(currentWord, currentGuesses){
+  var wordArray = currentWord.split("")
+  var guess = wordArray.map(function(letter){
+    if (currentGuesses.includes(letter) === false) return "_"
+    else return letter
+  })
+  var showGuess = guess.join(" ")
+  return showGuess
+}
+
 export class Word extends PureComponent {
   //static propTypes etc
+
 
 
   render() {
 
     const currentWord = this.props.word
-    // const currentGuesses = this.props.guesses
+    const currentGuesses = this.props.guesses
+    const playerWord = showGuess(currentWord, currentGuesses)
 
-    debugger;
+
+    // debugger;
     return(
-      <h1>{ currentWord }</h1>
+      <h1>{ playerWord }</h1>
     )
   }
 }

@@ -1,1 +1,5 @@
-export default {} // empty for now!
+import word from './word'
+
+export default {
+  word,
+} 

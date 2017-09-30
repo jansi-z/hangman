@@ -1,7 +1,7 @@
 // shows the current word
 
 import React, { PureComponent } from 'react'
-import PropTypes from 'prop-types'
+// import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 
 function showGuess(currentWord, currentGuesses){
@@ -15,9 +15,6 @@ function showGuess(currentWord, currentGuesses){
 }
 
 export class Word extends PureComponent {
-  //static propTypes etc
-
-
 
   render() {
 

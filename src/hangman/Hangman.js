@@ -1,19 +1,22 @@
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
-
-function wrongGuessCount(currentWord, currentGuesses) {
-  return currentGuesses.reduce(function(sum, guess) {
-    return sum + (currentWord.indexOf(guess, 0) === -1)
-  }, 0);
-}
+import { wrongGuessCount } from './Functions'
+import { isWinner } from './Functions'
 
 export class Hangman extends PureComponent {
   render() {
     const currentWord = this.props.word
     const currentGuesses = this.props.guesses
     const wrongGuesses = wrongGuessCount(currentWord, currentGuesses)
+    const winState = isWinner(currentWord, currentGuesses)
 
-    return(
+    if (winState === true) return (
+      <div className="hangman">
+        <h1>You win!</h1>
+      </div>
+    )
+
+    else return (
       <div className="hangman">
         <h1>{`${wrongGuesses}/6 wrong guesses`}</h1>
       </div>

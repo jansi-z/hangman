@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import submitGuess from '../actions/guess'
+import { isWinner } from './Functions'
 
 
 export class Guess extends PureComponent {
@@ -16,6 +17,14 @@ export class Guess extends PureComponent {
   }
 
   render() {
+    const winState = isWinner(this.props.word, this.props.guesses)
+
+    if (winState === true) return (
+      <div className="guess">
+        <button>Play again</button>
+      </div>
+    )
+
     return(
       <div className="guess">
         <h2>Enter a letter</h2>
@@ -30,6 +39,6 @@ export class Guess extends PureComponent {
   }
 }
 
-// const mapDispatchToProps = { guess: submitGuess }
+const mapStateToProps = ({ word, guesses }) => ({ word, guesses })
 
-export default connect(null, { submitGuess })(Guess)
+export default connect(mapStateToProps, { submitGuess })(Guess)

@@ -1,16 +1,8 @@
 import React, { PureComponent } from 'react'
 // import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
+import { showGuess } from './Functions'
 
-function showGuess(currentWord, currentGuesses){
-  var wordArray = currentWord.split("")
-  var guess = wordArray.map(function(letter){
-    if (currentGuesses.includes(letter) === false) return "_"
-    else return letter
-  })
-  var showGuess = guess.join(" ")
-  return showGuess
-}
 
 export class Word extends PureComponent {
 

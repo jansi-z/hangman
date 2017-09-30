@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import submitGuess from '../actions/guess'
 import { isWinner } from './Functions'
+import { wrongGuessCount } from './Functions'
 import newGame from '../actions/newGame'
 
 export class Guess extends PureComponent {
@@ -22,8 +23,9 @@ export class Guess extends PureComponent {
 
   render() {
     const winState = isWinner(this.props.word, this.props.guesses)
+    const wrongGuesses = wrongGuessCount(this.props.word, this.props.guesses)
 
-    if (winState === true) return (
+    if (winState === true || wrongGuesses > 5) return (
       <div className="guess">
         <button onClick={this.playAgain.bind(this)}>Play again</button>
       </div>

@@ -23,3 +23,10 @@ export function isWinner(currentWord, currentGuesses) {
   else
     return false
 }
+
+export function isLoser(currentWord, currentGuesses){
+  if (wrongGuessCount(currentWord, currentGuesses) > 5)
+    return true
+  else
+    return
+}

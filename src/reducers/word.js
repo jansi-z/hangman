@@ -1,6 +1,9 @@
 import { NEW_GAME } from '../actions/newGame'
+import { newWord } from '../hangman/Functions'
 
-export default (state = "something", { type, payload } = {}) => {
+const word = newWord()
+
+export default (state = word, { type, payload } = {}) => {
   switch (type) {
 
     case NEW_GAME :

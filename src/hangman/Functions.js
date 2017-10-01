@@ -30,3 +30,16 @@ export function isLoser(currentWord, currentGuesses){
   else
     return
 }
+
+export function gameOver(currentWord, currentGuesses){
+  if (isWinner(currentWord, currentGuesses) || isLoser(currentWord, currentGuesses))
+    return true
+  else
+    return false
+}
+
+export function newWord(){
+  var words  = ['abruptly', 'absurd', 'banjo', 'jazzy', 'wave', 'whiskey', 'doll', 'essential', 'donkey', 'weather', 'cupboard', 'arrange', 'table', 'rhyme', 'hurry']
+  var randomWord = words[Math.floor(Math.random()*words.length)]
+  return randomWord
+}

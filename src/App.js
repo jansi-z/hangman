@@ -3,6 +3,7 @@ import Title from './components/Title'
 import Hangman from './hangman/Hangman'
 import Word from './hangman/Word'
 import Guess from './hangman/Guess'
+import NewGameButton from './hangman/NewGameButton'
 import './App.css';
 
 class App extends Component {
@@ -13,6 +14,7 @@ class App extends Component {
         <Hangman />
         <Word />
         <Guess />
+        <NewGameButton />
       </div>
     );
   }

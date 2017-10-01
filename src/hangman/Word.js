@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import { showGuess } from './Functions'
 import { isWinner } from './Functions'
 import { isLoser } from './Functions'
+import './Word.sass'
 
 export class Word extends PureComponent {
 
@@ -19,12 +20,18 @@ export class Word extends PureComponent {
       return guess + " "
     }
 
-    if (win === true || loss === true) return (
+    if (win === true) return (
+      <div className="console">
+        <h1>You win!</h1>
+      </div>
+    )
+
+    else if (loss === true) return (
       <div className="console">
         <h1>Game over!</h1>
       </div>
     )
-    
+
     else return (
       <div className="console">
         <h1>{ playerWord }</h1>

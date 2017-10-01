@@ -24,10 +24,9 @@ export class Guess extends PureComponent {
     else
       return(
         <div className="guess">
-          <h2>Enter a letter</h2>
           <form id="guessForm" onSubmit={this.submitForm.bind(this)}>
             <div className="input">
-              <input ref="guess" type="guess" />
+              <input ref="guess" type="guess" placeholder="Enter a letter" />
             </div>
             <input type="submit" value="Guess!" />
           </form>

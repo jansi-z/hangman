@@ -1,9 +1,10 @@
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import { wrongGuessCount } from './Functions'
-import { isWinner } from './Functions'
-import { isLoser } from './Functions'
+// import { isWinner } from './Functions'
+// import { isLoser } from './Functions'
 import { returnImage } from './Functions'
+import './Hangman.css'
 
 export class Hangman extends PureComponent {
   render() {

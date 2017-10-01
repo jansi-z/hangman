@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import submitGuess from '../actions/guess'
 import { gameOver } from './Functions'
+import './Guess.css'
 
 export class Guess extends PureComponent {
 
